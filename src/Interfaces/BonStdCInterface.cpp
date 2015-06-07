@@ -181,8 +181,9 @@ void FreeBonminProblem(BonminProblem bonmin_problem)
 	delete [] bonmin_problem->x_U;
 	delete [] bonmin_problem->var_types;
 	delete [] bonmin_problem->var_linearity_types;
-	delete [] bonmin_problem->constraint_linearity_types;
-	if (bonmin_problem->m>0) {
+    if (bonmin_problem->m>0)
+    {
+    	delete [] bonmin_problem->constraint_linearity_types;
 	    delete [] bonmin_problem->g_L;
 	    delete [] bonmin_problem->g_U;
 	}

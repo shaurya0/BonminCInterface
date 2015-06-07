@@ -10,7 +10,7 @@ CFLAGS += $(INCLUDES)
 CFLAGS += -L$(RELEASE_LIB_DIR)
 CFLAGS += -Wl,-rpath=$(RELEASE_LIB_DIR)
 DEBUG_LIBS = $(wildcard $(DEBUG_LIB_DIR)/*.a)
-LIBS = -lbonminampl -lbonmin -lCbc -lCbcSolver -lCgl -lClp -lClpSolver -lcoinasl -lcoinblas -lcoinlapack -lcoinmumps -lCoinUtils -lOsiCbc -lOsiClp -lOsiCommonTests -lOsi
+LIBS = -lbonmin -lCbc -lCbcSolver -lCgl -lClp -lClpSolver -lcoinblas -lcoinlapack -lcoinmumps -lCoinUtils -lOsiCbc -lOsiClp -lOsi
 LIBS += -lipopt -llapack -ldl -lcoinhsl -lblas -lgfortran -lm -lquadmath -lstdc++ -lz
 
 all : MyBonmin.o main

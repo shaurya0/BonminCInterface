@@ -33,6 +33,8 @@ int main(int argc, char const *argv[])
                         index_style, &eval_f, &eval_g, &eval_grad_f,
                         &eval_jac_g, &eval_h, variable_types, variable_linearity_types,
                         constraint_linearity_types, NULL, NULL);
+    AddBonminStrOption(bonmin_problem, "bonmin.algorithm", "B-OA");
+
 
     Int result = BonminSolve(bonmin_problem, starting_point, NULL, obj_val,
                                 mult_g, mult_x_L, mult_x_U, user_data);
