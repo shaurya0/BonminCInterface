@@ -174,7 +174,6 @@ void FreeBonminProblem(BonminProblem bonmin_problem)
 {
     if (bonmin_problem == NULL)
     {
-        printf("Freeing resources\n");
         return;
     }
 
@@ -188,8 +187,14 @@ void FreeBonminProblem(BonminProblem bonmin_problem)
 	    delete [] bonmin_problem->g_U;
 	}
 
-	delete [] bonmin_problem->x_scaling;
-	delete [] bonmin_problem->g_scaling;
+    if(bonmin_problem->x_scaling != NULL)
+    {
+        delete [] bonmin_problem->x_scaling;
+    }
+    if(bonmin_problem->g_scaling != NULL)
+    {
+    	delete [] bonmin_problem->g_scaling;
+    }
 
 	delete bonmin_problem;
 }
